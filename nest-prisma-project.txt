@@ -1,0 +1,45 @@
+createNewNestProject-
+$ npm i -g @nestjs/cli
+$ nest new project-name
+
+
+
+initiatePrisma-
+$ npm init -y
+$ npm install prisma typescript ts-node @types/node --save-dev
+$ npx prisma
+$ npx prisma init
+
+
+
+CreateGitRepository-
+$ git init
+$ git commit -m "first commit"
+$ git branch -M master
+git remote add origin https://addYourDeveloperPersonalAccessToken:x-oauth-basic@github.com/Smaint-Solutions/chunkable-backend.git
+
+
+
+createDb-
+editEnvDbLink-
+
+
+
+addEnvInPrisma-
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+
+
+afterCreatingSchema-
+$ npx prisma migrate dev --name EnquirySchemaCreated
+$ npx prisma generate
+$ npx prisma studio
+
+
+
+newCreateNewResource-
+$nest g resource name-resource --no-spec
